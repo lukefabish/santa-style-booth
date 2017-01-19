@@ -1,0 +1,215 @@
+.draggable {
+	position: absolute;
+	cursor: move;
+	top: 0px;
+	left: 0px;
+	display:none;
+}
+
+.selected {
+	border: 2px dashed red;
+	margin-left: -2px;
+	margin-top: -2px;
+}
+
+#santa-frame{
+	border: 1px solid grey;
+	margin:0 auto;
+	width:640px;
+	height:480px;
+}
+
+#santa-video {
+	left: -140px;
+	position:absolute;
+	z-index:-1;
+}
+
+#santa-canvas {
+	display:none;
+	z-index:1;
+}
+
+#face-container {
+	left:140px;
+	width:355px;
+	position:relative;
+}
+
+#faceguide {
+	display:none;
+}
+
+#getpic {
+	position: relative;
+	width:360px;
+	height:480px;
+}
+
+#getpic img {
+	margin: auto;
+	display: block;
+	margin-top: 7px;
+	cursor: pointer;
+	padding-top:10px;
+	padding-bottom:10px;
+}
+
+#getpic img:hover {
+	background-color: #ddd;
+}
+
+#lnav {
+	float:left;
+	position:absolute;
+	background-color:white;
+	width:140px;
+	height:480px;
+	opacity: 0.2;
+}
+
+#rnav {
+	float:right;
+	width:140px;
+	height:480px;
+	opacity: 0.2;
+}
+
+.nav-bg{
+	background:url('../images/nav-bg.png');
+	background-repeat: repeat-y;
+}
+
+.navitem{
+	width: 95%;
+	height: 96px;
+	margin: 0 auto;
+	border-bottom: 1px solid #ffb600;
+}
+
+.navitem:last-child{
+	border-bottom: 0;
+}
+
+.navitem img {
+	margin: 0 auto;
+	display: block;
+	padding-top:2px;
+	cursor: pointer;
+}
+
+.draggable:hover {
+	border: 2px dashed red;
+	margin-left: -2px;
+	margin-top: -2px;
+}
+
+.draggable img {
+	pointer-events:none;
+}
+
+#frame-img{
+	pointer-events:none;
+}
+
+.scale-handle{
+	border: 2px solid red;
+	margin-right: -2px;
+	margin-bottom: -2px;
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	height: 20px;
+	width: 20px;
+	display: none;
+}
+
+.draggable:hover .scale-handle, .draggable.hover .scale-handle {
+	display: block;
+}
+
+.arrow-container {
+	text-align: center;
+}
+
+.arrow {
+	display: inline-block !important;
+	margin-left: auto;
+	margin-right: auto;
+	height: 20px;
+}
+
+.arrow:first-child {
+	padding-right:10px;
+}
+
+.arrow:last-child {
+	padding-left:10px;
+}
+
+.arrow:hover {
+	cursor: pointer;
+	margin-left:-2px;
+	margin-top:-2px;
+	height: 22px;
+}
+
+.dragging {
+	z-index: 1000;
+}
+
+.draggable img {
+	width: 100%;
+	height: 100%;
+}
+
+/* Face parts */
+#nose, #rcheek, #lcheek {
+	width:77px;
+	height:64px;
+}
+
+#nose {
+	top:214px;
+	left:145px;
+}
+
+#lcheek {
+	top:225px;
+	left:100px;
+}
+
+#rcheek {
+	top:225px;
+	left:198px;
+}
+
+#beard {
+	top: 209px;
+	left: 82px;
+}
+
+#hat {
+	top:205px;
+	left:182px;
+}
+
+#moustache {
+	top:249px;
+	left:81px;
+}
+
+#lbrow {
+	top:139px;
+	left:50px;
+}
+
+#rbrow {
+	top:138px;
+	left:192px;
+}
+
+#frame-img {
+	top:0px;
+	left:0px;
+}

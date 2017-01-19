@@ -1,0 +1,120 @@
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>Try On Your New Santa Beard</title>
+
+	<meta name="revisit-after" content="2 days" />
+	<meta name="author" content="shaveradvice.com">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+	<link rel="stylesheet" type="text/css" href="./css/santa.css">
+	<script src="./js/santa.js" type="text/javascript"></script>
+
+</head>
+<body class="home blog layout-2cr">
+
+	<div id="santa-container" style="fixed;width:100%;">
+		<div id="santa-frame" style="margin:0 auto;width:640px;height:480px;">
+
+			<div id="lnav" class="nav-bg" style="width:140px;">
+				<div class="navitem">
+					<img id="framenav" src="images/nav-tree.png" width="51px" height="68px" onclick="toggleFrame()" title="Click once to add or remove a border." />
+					<div class="arrow-container">
+						<img class="arrow" src="images/l-arrow.png" onclick="decFrame()" title="Choose different borders" />
+						<img class="arrow" src="images/r-arrow.png" onclick="incFrame()" title="Choose different borders" />
+					</div>
+				</div>
+				<div class="navitem" style="height:192px;">
+					<img style="padding-top:30px;" width="111px" height="142px" src="images/nav-start-over.png" onclick="takeAnotherPic()" title="Start over with a new picture" />
+				</div>
+				<div class="navitem" style="height:192px";>
+					<a id="save" download="SantaMe.jpg" ><img height="144px" width="105px" style="padding-top:31px;" src="images/disk.png" title="Save your picture" /></a>
+				</div>
+			</div>
+
+			<div id="rnav" class="nav-bg">
+				<div class="navitem">
+					<img id="hatnav" src="images/navhat.png" width="80px" height="69px" onclick="toggleHat()" title="Click once to add or remove a hat" />
+					<div class="arrow-container">
+						<img class="arrow" src="images/l-arrow.png" onclick="decHat()" title="Choose different hats" />
+						<img class="arrow" src="images/r-arrow.png" onclick="incHat()" title="Choose different hats" />
+					</div>
+				</div>
+				<div class="navitem">
+					<img id="browsnav" src="images/naveyebrows.png" width="99px" height="19px" style="padding-top:25px;" onclick="toggleEyebrows()" title="Click once to add or remove eyebrows" />
+					<div class="arrow-container" style="padding-top:20px;">
+						<img class="arrow" src="images/l-arrow.png" onclick="decBrows()" title="Choose different eyebrows" />
+						<img class="arrow" src="images/r-arrow.png" onclick="incBrows()" title="Choose different eyebrows" />
+					</div>
+				</div>
+				<div class="navitem"  />
+					<img id="moustachenav" src="images/navmoustache.png" width="93px" height="23px" style="padding-top:25px;" onclick="toggleMoustache()" title="Click once to add or remove a moustache"  />
+					<div class="arrow-container" style="padding-top:15px;">
+						<img class="arrow" src="images/l-arrow.png" onclick="decMoustache()" title="Choose different moustaches" />
+						<img class="arrow" src="images/r-arrow.png" onclick="incMoustache()" title="Choose different moustaches" />
+					</div>
+				</div>
+				<div class="navitem">
+					<img id="beardnav" src="images/navbeard.png" width="77px" height="60px" onclick="toggleBeard()" title="Click once to add or remove a beard" />
+					<div class="arrow-container" style="padding-top:7px;">
+						<img class="arrow" src="images/l-arrow.png" onclick="decBeard()" title="Choose different beards" />
+						<img class="arrow" src="images/r-arrow.png" onclick="incBeard()" title="Choose different beards" />
+					</div>
+				</div>
+				<div class="navitem">
+					<img id="blushnav" src="images/nav-blush.png" width="60px" height="75px" style="padding-top:9px;" onclick="toggleBlush()" title="Click to add rosy cheeks and nose" />
+				</div>
+			</div>
+
+			<!-- Container for face stuff-->
+			<div id="face-container" style="" >
+
+			<div id="getpic">
+				<div id="takephoto">
+					<img src="images/takephoto.png" width="355" height="448" onclick="activateCamera(event)" />
+				</div>
+			</div>
+
+			<video id="santa-video" width="640" height="480" autoplay="true"></video>
+			<canvas id="santa-canvas" width="360" height="480"></canvas>
+
+			<img id="faceguide" src="images/face-guide.png" width="360" height="480" style="" />
+
+			<div id="nose" class="draggable">
+				<img id="nose-img" src="images/nose.png" title="Drag me, or change my size using the lower-right corner" />
+			</div>
+			<div id="lcheek" class="draggable">
+				<img id="lcheek-img" src="images/lcheek.png" title="Drag me, or change my size using the lower-right corner" />
+			</div>
+			<div id="rcheek" class="draggable">
+				<img id="rcheek-img" src="images/rcheek.png" title="Drag me, or change my size using the lower-right corner" />
+			</div>
+			<div id="beard" class="draggable">
+				<img id="beard-img" src="images/beard.png" title="Drag me, or change my size using the lower-right corner" />
+				<div id="beard-scaler" class="scale-handle"></div>
+			</div>
+			<div id="hat" class="draggable">
+				<img id="hat-img" src="images/hat.png" alt="Drag me, or change my size using the lower-right corner" />
+				<div id="hat-scaler" class="scale-handle"></div>
+			</div>
+			<div id="moustache" class="draggable">
+				<img id="moustache-img" src="images/moustache.png" title="Drag me, or change my size using the lower-right corner" />
+				<div id="hat-scaler" class="scale-handle"></div>
+			</div>
+			<div id="lbrow" class="draggable">
+				<img id="lbrow-img" src="images/lbrow.png" title="Drag me, or change my size using the lower-right corner" />
+				<div id="lbrow-scaler" class="scale-handle"></div>
+			</div>
+			<div id="rbrow" class="draggable">
+				<img id="rbrow-img" src="images/rbrow.png" title="Drag me, or change my size using the lower-right corner" />
+				<div id="rbrow-scaler" class="scale-handle"></div>
+			</div>
+			<img id="frame-img" src="images/tree.png" width="361" height="482" style="display:none;position:absolute;" />
+
+		</div>  <!--face container -->
+
+		</div>
+
+</body>
+</html>
